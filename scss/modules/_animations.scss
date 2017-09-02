@@ -1,0 +1,16 @@
+// Animations
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px $secondaryColor, 0 0 20px $secondaryColor, 0 0 30px $secondaryColor, 0 0 40px $glowBlue, 0 0 70px $glowBlue, 0 0 80px $glowBlue, 0 0 100px $glowBlue, 0 0 150px $glowBlue;
+  }
+  to {
+    box-shadow: 0 0 5px $secondaryColor, 0 0 10px $secondaryColor, 0 0 15px $secondaryColor, 0 0 20px $glowBlue, 0 0 35px $glowBlue, 0 0 40px $glowBlue, 0 0 50px $glowBlue, 0 0 75px $glowBlue;
+  }
+}
+
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}

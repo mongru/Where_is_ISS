@@ -1,0 +1,30 @@
+/* Footer styles */
+
+.footer {
+    &__container {
+        padding: 4em;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        &--txt {
+            color : $neutralGrey;
+            font-weight: 100;
+            font-size: 0.5em;
+            text-rendering: optimizeLegibility;
+        }
+
+        &--icon {
+            color : $glowBlue;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 0.5em;
+            cursor: pointer;
+
+            a {
+                color: $glowBlue;
+            }
+        }
+    }
+}

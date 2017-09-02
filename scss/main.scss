@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Roboto+Mono:400&subset=latin-ext');
+
+@import 'modules/all';
+@import 'partials/header';
+@import 'partials/welcome_screen';
+@import 'partials/localizer_infobox';
+@import 'partials/footer';
+
+body {
+	background-color: $mainColor;
+	font-family: $mainFont;
+	overflow-x: hidden;
+}
+
+.main {
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 100%;
+		padding-top: 12vh;
+	}
+	@include respond-to($desktop) {
+		padding-top: 10vh;
+	}
+	@include respond-to($large-desktop) {
+		padding-top: 8vh;
+	}
+}

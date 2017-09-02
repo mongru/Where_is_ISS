@@ -1,0 +1,46 @@
+/* Modal styles */
+
+.localizer__infobox {
+
+	font-family: $mainFont;
+	font-weight: 300;
+	line-height: 2;
+	color: $mainColor;
+	font-size: 6vw;
+	text-rendering: optimizeLegibility;
+	padding: 3vw;
+	text-align: center;
+
+	&--icon {
+		display: block;
+		margin-top: 4vh;
+	}
+
+	span {
+		font-weight: 400;
+		color: $glowBlue;
+	}
+
+	a {
+		color: $glowBlue;
+
+		&:visited,
+		&:hover,
+		&:active {
+			color: $secondaryColor;
+		}
+	}
+
+	@include respond-to($tablet) {
+		font-size: 4vw;
+	}
+	@include respond-to($tablet-landscape) {
+		font-size: 3vw;
+	}
+	@include respond-to($desktop) {
+		font-size: 3vw;
+	}
+	@include respond-to($large-desktop) {
+		font-size: 2vw;
+	}
+}
