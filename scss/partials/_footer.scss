@@ -12,6 +12,12 @@
             font-weight: 100;
             font-size: 0.5em;
             text-rendering: optimizeLegibility;
+            @include respond-to($desktop) {
+                font-size: 0.6em;
+            }
+            @include respond-to($large-desktop) {
+                font-size: 0.7em;
+            }
         }
 
         &--icon {
