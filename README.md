@@ -42,7 +42,7 @@ npm start
 & have fun editing!
 
 ## Demo
-[Click here](https://mongru.github.io/Where_is_ISS/
+[Click here](https://mongru.github.io/Where_is_ISS/)
 
 
 * design & code Monika Grubizna
