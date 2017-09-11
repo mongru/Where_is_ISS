@@ -12,9 +12,9 @@ App is fully responsive and was designed using the mobile first approach.
 * ReactJS
 * ES6
 * SCSS
-* [React Bootstrap] (https://react-bootstrap.github.io/)
-* [React FontAwesome] (https://github.com/danawoodman/react-fontawesome)
-* [Fetch] (https://github.com/github/fetch)
+* [React Bootstrap](https://react-bootstrap.github.io/)
+* [React FontAwesome](https://github.com/danawoodman/react-fontawesome)
+* [Fetch](https://github.com/github/fetch)
 * + some more npm dependencies ([check package.json file for a full list](package.json))
 
 & Webpack to bundle together all of the above.
