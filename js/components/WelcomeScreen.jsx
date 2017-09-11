@@ -25,7 +25,7 @@ export class WelcomeScreen extends React.Component {
                         <span className="main__welcomeScreen--icon">
                             <FontAwesome name='globe' size='2x'/>
                         </span>
-                            Sprawdź
+                            Check
                     </button>
                     <LocalizerModal show={this.state.lgShow} onHide={lgClose}/>
                 </div>

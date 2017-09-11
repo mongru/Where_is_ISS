@@ -15,8 +15,6 @@ class App extends React.Component {
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    console.log('Halo Kosmos z app.jsx');
-
     ReactDOM.render ((
         <App />
     ), document.getElementById('root')

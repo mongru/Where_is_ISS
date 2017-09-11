@@ -18561,8 +18561,6 @@ var App = function (_React$Component) {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    console.log('Halo Kosmos z app.jsx');
-
     _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
 });
 
@@ -31352,7 +31350,7 @@ var Header = exports.Header = function (_React$Component) {
                 _react2.default.createElement(
                     'h1',
                     { className: 'header__title' },
-                    'Gdzie jest ISS?'
+                    'Where is the ISS?'
                 )
             );
         }
@@ -31436,7 +31434,7 @@ var WelcomeScreen = exports.WelcomeScreen = function (_React$Component) {
                             { className: 'main__welcomeScreen--icon' },
                             _react2.default.createElement(_reactFontawesome2.default, { name: 'globe', size: '2x' })
                         ),
-                        'Sprawd\u017A'
+                        'Check'
                     ),
                     _react2.default.createElement(_LocalizerModal.LocalizerModal, { show: this.state.lgShow, onHide: lgClose })
                 )
@@ -31594,7 +31592,7 @@ var LocalizerModal = exports.LocalizerModal = function (_React$Component) {
                     _react2.default.createElement(
                         _reactBootstrap.Modal.Title,
                         { id: 'contained-modal-title-lg' },
-                        'Aktualna lokalizacja stacji ISS'
+                        'Current position of the ISS'
                     )
                 ),
                 _react2.default.createElement(
@@ -31608,7 +31606,7 @@ var LocalizerModal = exports.LocalizerModal = function (_React$Component) {
                     _react2.default.createElement(
                         _reactBootstrap.Button,
                         { onClick: this.props.onHide },
-                        'Zamknij'
+                        'Close'
                     )
                 )
             );
@@ -42993,7 +42991,7 @@ var Localizer = exports.Localizer = function (_React$Component) {
 
         _this.getLocationName = function () {
 
-            var geoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + _this.state.lat + ',' + _this.state.lng + '&language=pl&location_type=APPROXIMATE&key=AIzaSyCDxq86RWVhcaXwLkviwZb61OFFC1-2aBY';
+            var geoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + _this.state.lat + ',' + _this.state.lng + '&language=en&location_type=APPROXIMATE&key=AIzaSyCDxq86RWVhcaXwLkviwZb61OFFC1-2aBY';
             // 2,500 free requests per day
 
             fetch(geoUrl).then(_this.handleErrors).then(function (res) {
@@ -43097,25 +43095,24 @@ var Localizer = exports.Localizer = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            // console.log("Halo Kosmos");
             // console.log(this.state.currentTime);
             // console.log(this.state.location);
 
             // -------> loading message
             if (this.state.loading && !this.state.error) {
                 // console.log("loading");
-                return _react2.default.createElement(_LocalizerInfobox.LocalizerInfobox, { name: 'spinner', message: 'Sprawdzam...' });
+                return _react2.default.createElement(_LocalizerInfobox.LocalizerInfobox, { name: 'spinner', message: 'Checking...' });
             }
 
             // -------> success message
             if (this.state.dataReady && !this.state.loading) {
-                console.log(this.state.currentTime);
-                console.log(this.state.location);
-                return _react2.default.createElement(_LocalizerInfobox.LocalizerInfobox, { name: 'rocket', message: ["O godzinie ", _react2.default.createElement(
+                // console.log(this.state.currentTime);
+                // console.log(this.state.location);
+                return _react2.default.createElement(_LocalizerInfobox.LocalizerInfobox, { name: 'rocket', message: ["At ", _react2.default.createElement(
                         'span',
                         { key: "time" },
                         this.state.currentTime
-                    ), " Stacja Kosmiczna ISS właśnie przeleciała sobie nad ", _react2.default.createElement(
+                    ), " the International Space Station is located above  ", _react2.default.createElement(
                         'span',
                         { key: "location" },
                         this.state.location
@@ -43124,21 +43121,21 @@ var Localizer = exports.Localizer = function (_React$Component) {
 
             // -------> default message
             if (this.state.error && !this.state.dataReady) {
-                console.log(this.state.currentTime);
-                console.log("default message");
-                return _react2.default.createElement(_LocalizerInfobox.LocalizerInfobox, { name: 'globe', message: ["Ups! Jest ", _react2.default.createElement(
+                // console.log(this.state.currentTime);
+                // console.log("default message");
+                return _react2.default.createElement(_LocalizerInfobox.LocalizerInfobox, { name: 'globe', message: ["Oops! At ", _react2.default.createElement(
                         'span',
                         { key: "time" },
                         this.state.currentTime
-                    ), " Stacja leci teraz nad wielką wodą i nie chce z nami gadać! Spróbuj za chwilę. Na pocieszenie ", _react2.default.createElement(
+                    ), " the International Space Station is located above the ocean and we have no name available for this place! Please try again in a couple of minutes. If you want to see what the astronauts see right now ", _react2.default.createElement(
                         'span',
                         { key: "link" },
                         _react2.default.createElement(
                             'a',
                             { href: 'http://iss.astroviewer.net/', target: '_blank', title: 'astroviewer' },
-                            'kliknij tu'
+                            'click here'
                         )
-                    ), " i zobacz co widzą teraz astronauci ;)"] });
+                    )] });
             }
         }
     }]);

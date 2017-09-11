@@ -13,13 +13,13 @@ export class LocalizerModal extends React.Component {
                 marginTop: "24vh"
             }}>
                 <Modal.Header closeButton>
-                    <Modal.Title id="contained-modal-title-lg">Aktualna lokalizacja stacji ISS</Modal.Title>
+                    <Modal.Title id="contained-modal-title-lg">Current position of the ISS</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Localizer/>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={this.props.onHide}>Zamknij</Button>
+                    <Button onClick={this.props.onHide}>Close</Button>
                 </Modal.Footer>
             </Modal>
         );

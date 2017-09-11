@@ -78,7 +78,7 @@ export class Localizer extends React.Component {
     // -------> function for getting location name based on the current geo position
     getLocationName = () => {
 
-        const geoUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.lat},${this.state.lng}&language=pl&location_type=APPROXIMATE&key=AIzaSyCDxq86RWVhcaXwLkviwZb61OFFC1-2aBY`;
+        const geoUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.lat},${this.state.lng}&language=en&location_type=APPROXIMATE&key=AIzaSyCDxq86RWVhcaXwLkviwZb61OFFC1-2aBY`;
         // 2,500 free requests per day
 
         fetch(geoUrl)
@@ -164,7 +164,6 @@ export class Localizer extends React.Component {
     // }
 
     render() {
-        // console.log("Halo Kosmos");
         // console.log(this.state.currentTime);
         // console.log(this.state.location);
 
@@ -172,25 +171,25 @@ export class Localizer extends React.Component {
         if(this.state.loading && !this.state.error) {
             // console.log("loading");
             return (
-                <LocalizerInfobox name='spinner' message="Sprawdzam..." />
+                <LocalizerInfobox name='spinner' message="Checking..." />
             )
         }
 
         // -------> success message
         if(this.state.dataReady && !this.state.loading) {
-            console.log(this.state.currentTime);
-            console.log(this.state.location);
+            // console.log(this.state.currentTime);
+            // console.log(this.state.location);
             return (
-                <LocalizerInfobox name='rocket' message={["O godzinie ", <span key={"time"}>{this.state.currentTime}</span>, " Stacja Kosmiczna ISS właśnie przeleciała sobie nad ", <span key={"location"}>{this.state.location}</span>]} />
+                <LocalizerInfobox name='rocket' message={["At ", <span key={"time"}>{this.state.currentTime}</span>, " the International Space Station is located above  ", <span key={"location"}>{this.state.location}</span>]} />
                 );
         }
 
         // -------> default message
         if(this.state.error && !this.state.dataReady) {
-            console.log(this.state.currentTime);
-            console.log("default message");
+            // console.log(this.state.currentTime);
+            // console.log("default message");
             return (
-                <LocalizerInfobox name='globe' message={["Ups! Jest ", <span key={"time"}>{this.state.currentTime}</span>, " Stacja leci teraz nad wielką wodą i nie chce z nami gadać! Spróbuj za chwilę. Na pocieszenie ", <span key={"link"}><a href="http://iss.astroviewer.net/" target="_blank" title="astroviewer">kliknij tu</a></span>, " i zobacz co widzą teraz astronauci ;)"]} />
+                <LocalizerInfobox name='globe' message={["Oops! At ", <span key={"time"}>{this.state.currentTime}</span>, " the International Space Station is located above the ocean and we have no name available for this place! Please try again in a couple of minutes. If you want to see what the astronauts see right now ", <span key={"link"}><a href="http://iss.astroviewer.net/" target="_blank" title="astroviewer">click here</a></span>]} />
             );
         }
     }

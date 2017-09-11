@@ -7,7 +7,7 @@ export class Header extends React.Component {
         return (
             <header>
                 <h1 className="header__title">
-                    Gdzie jest ISS?
+                    Where is the ISS?
                 </h1>
             </header>
         )
