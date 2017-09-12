@@ -42957,8 +42957,8 @@ var Localizer = exports.Localizer = function (_React$Component) {
                 return res.json().then(function (res) {
                     // console.log(res);
                     // console.log(res.timestamp)
-                    console.log(res.latitude.toFixed(6));
-                    console.log(res.longitude.toFixed(6));
+                    // console.log(res.latitude.toFixed(6));
+                    // console.log(res.longitude.toFixed(6));
 
                     var lat = res.latitude.toFixed(6);
                     var lng = res.longitude.toFixed(6);
@@ -42997,8 +42997,8 @@ var Localizer = exports.Localizer = function (_React$Component) {
             fetch(geoUrl).then(_this.handleErrors).then(function (res) {
                 return res.json().then(function (res) {
                     // console.log(res);
-                    console.log(res.results);
-                    console.log(res.status);
+                    // console.log(res.results);
+                    // console.log(res.status);
                     var status = res.status;
                     // const defaultMessage = "wielka wodą, Google nie ma adresu dla tego położenia. Spróbuj za chwilę :)";
                     //"ZERO_RESULTS" indicates that the reverse geocoding was successful but returned no results. This may occur if the geocoder was passed a latlng in a remote location.
@@ -43127,7 +43127,7 @@ var Localizer = exports.Localizer = function (_React$Component) {
                         'span',
                         { key: "time" },
                         this.state.currentTime
-                    ), " the International Space Station is located above the ocean and we have no name available for this place! Please try again in a couple of minutes. If you want to see what the astronauts see right now ", _react2.default.createElement(
+                    ), " the International Space Station is located above the ocean and we have no place names available! Please try again in a couple of minutes. If you'd like to see what the astronauts see right now ", _react2.default.createElement(
                         'span',
                         { key: "link" },
                         _react2.default.createElement(

@@ -40,8 +40,8 @@ export class Localizer extends React.Component {
             .then(res => {
                 // console.log(res);
                 // console.log(res.timestamp)
-                console.log(res.latitude.toFixed(6));
-                console.log(res.longitude.toFixed(6));
+                // console.log(res.latitude.toFixed(6));
+                // console.log(res.longitude.toFixed(6));
 
                 const lat = res.latitude.toFixed(6);
                 const lng = res.longitude.toFixed(6);
@@ -86,8 +86,8 @@ export class Localizer extends React.Component {
             .then(res => res.json()
             .then(res => {
                 // console.log(res);
-                console.log(res.results);
-                console.log(res.status);
+                // console.log(res.results);
+                // console.log(res.status);
                 const status = res.status;
                 // const defaultMessage = "wielka wodą, Google nie ma adresu dla tego położenia. Spróbuj za chwilę :)";
                 //"ZERO_RESULTS" indicates that the reverse geocoding was successful but returned no results. This may occur if the geocoder was passed a latlng in a remote location.
@@ -189,7 +189,7 @@ export class Localizer extends React.Component {
             // console.log(this.state.currentTime);
             // console.log("default message");
             return (
-                <LocalizerInfobox name='globe' message={["Oops! At ", <span key={"time"}>{this.state.currentTime}</span>, " the International Space Station is located above the ocean and we have no name available for this place! Please try again in a couple of minutes. If you want to see what the astronauts see right now ", <span key={"link"}><a href="http://iss.astroviewer.net/" target="_blank" title="astroviewer">click here</a></span>]} />
+                <LocalizerInfobox name='globe' message={["Oops! At ", <span key={"time"}>{this.state.currentTime}</span>, " the International Space Station is located above the ocean and we have no place names available! Please try again in a couple of minutes. If you'd like to see what the astronauts see right now ", <span key={"link"}><a href="http://iss.astroviewer.net/" target="_blank" title="astroviewer">click here</a></span>]} />
             );
         }
     }
