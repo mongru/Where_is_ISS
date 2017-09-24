@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import FontAwesome from 'react-fontawesome';
 
-import {LocalizerModal} from './LocalizerModal.jsx';
+import { LocalizerModal } from './LocalizerModal.jsx';
 
 
 export class WelcomeScreen extends React.Component {
@@ -17,6 +17,7 @@ export class WelcomeScreen extends React.Component {
     render() {
 
         let lgClose = () => this.setState({lgShow: false});
+        const { lgShow } = this.state;
 
         return (
             <section className="main">
@@ -27,7 +28,7 @@ export class WelcomeScreen extends React.Component {
                         </span>
                             Check
                     </button>
-                    <LocalizerModal show={this.state.lgShow} onHide={lgClose}/>
+                    <LocalizerModal show={lgShow} onHide={lgClose}/>
                 </div>
             </section>
         );

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'whatwg-fetch';
 
-import {LocalizerInfobox} from './LocalizerInfobox.jsx';
+import { LocalizerInfobox } from './LocalizerInfobox.jsx';
 
 
 export class Localizer extends React.Component {
@@ -77,10 +77,8 @@ export class Localizer extends React.Component {
 
     // -------> function for getting location name based on the current geo position
     getLocationName = () => {
-
         const geoUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.lat},${this.state.lng}&language=en&location_type=APPROXIMATE&key=AIzaSyCDxq86RWVhcaXwLkviwZb61OFFC1-2aBY`;
         // 2,500 free requests per day
-
         fetch(geoUrl)
             .then(this.handleErrors)
             .then(res => res.json()
@@ -89,7 +87,6 @@ export class Localizer extends React.Component {
                 // console.log(res.results);
                 // console.log(res.status);
                 const status = res.status;
-                // const defaultMessage = "wielka wodą, Google nie ma adresu dla tego położenia. Spróbuj za chwilę :)";
                 //"ZERO_RESULTS" indicates that the reverse geocoding was successful but returned no results. This may occur if the geocoder was passed a latlng in a remote location.
 
                 // if google reverse geo fails to get location name, try locationiq api
@@ -153,7 +150,7 @@ export class Localizer extends React.Component {
 
         this.getCurrPosition();
 
-        // automatically update position after 60s without reloading the page
+        // asynchronously update position after 60s without reloading the page
         // this.intervalId = setInterval(() => {
         //     this.getCurrPosition();
         // }, 60000);
@@ -166,9 +163,10 @@ export class Localizer extends React.Component {
     render() {
         // console.log(this.state.currentTime);
         // console.log(this.state.location);
+        const { loading, error, dataReady, currentTime, location } = this.state;
 
         // -------> loading message
-        if(this.state.loading && !this.state.error) {
+        if(loading && !error) {
             // console.log("loading");
             return (
                 <LocalizerInfobox name='spinner' message="Checking..." />
@@ -176,20 +174,20 @@ export class Localizer extends React.Component {
         }
 
         // -------> success message
-        if(this.state.dataReady && !this.state.loading) {
+        if(dataReady && !loading) {
             // console.log(this.state.currentTime);
             // console.log(this.state.location);
             return (
-                <LocalizerInfobox name='rocket' message={["At ", <span key={"time"}>{this.state.currentTime}</span>, " the International Space Station is located above  ", <span key={"location"}>{this.state.location}</span>]} />
+                <LocalizerInfobox name='rocket' message={["At ", <span key={"time"}>{currentTime}</span>, " the International Space Station is located above  ", <span key={"location"}>{location}</span>]} />
                 );
         }
 
         // -------> default message
-        if(this.state.error && !this.state.dataReady) {
+        if(error && !dataReady) {
             // console.log(this.state.currentTime);
             // console.log("default message");
             return (
-                <LocalizerInfobox name='globe' message={["Oops! At ", <span key={"time"}>{this.state.currentTime}</span>, " the International Space Station is located above the ocean and we have no place names available! Please try again in a couple of minutes. If you'd like to see what the astronauts see right now ", <span key={"link"}><a href="http://iss.astroviewer.net/" target="_blank" title="astroviewer">click here</a></span>]} />
+                <LocalizerInfobox name='globe' message={["Oops! At ", <span key={"time"}>{currentTime}</span>, " the International Space Station is located above the ocean and we have no place names available! Please try again in a couple of minutes. If you'd like to see what the astronauts see right now ", <span key={"link"}><a href="http://iss.astroviewer.net/" target="_blank" title="astroviewer">click here</a></span>]} />
             );
         }
     }

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {Modal} from 'react-bootstrap';
-import {Button} from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
-import {Localizer} from './Localizer.jsx';
+import { Localizer } from './Localizer.jsx';
 
 export class LocalizerModal extends React.Component {
     render() {
