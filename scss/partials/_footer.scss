@@ -1,5 +1,4 @@
 /* Footer styles */
-
 .footer {
     &__container {
         padding: 4em;
@@ -8,8 +7,8 @@
         flex-direction: column;
 
         &--txt {
-            color : $neutralGrey;
-            font-weight: 100;
+            color: $neutralGrey;
+            font-weight: 300;
             font-size: 0.5em;
             text-rendering: optimizeLegibility;
             @include respond-to($desktop) {
@@ -21,7 +20,7 @@
         }
 
         &--icon {
-            color : $glowBlue;
+            color: $glowBlue;
             display: flex;
             justify-content: space-around;
             align-items: center;

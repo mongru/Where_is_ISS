@@ -1,7 +1,5 @@
 /* Modal styles */
-
 .localizer__infobox {
-
 	font-family: $mainFont;
 	font-weight: 300;
 	line-height: 2;
@@ -24,13 +22,12 @@
 	a {
 		color: $glowBlue;
 
-		&:visited,
+		&:active,
 		&:hover,
-		&:active {
+		&:visited {
 			color: $secondaryColor;
 		}
 	}
-
 	@include respond-to($tablet) {
 		font-size: 4vw;
 	}

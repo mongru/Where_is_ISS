@@ -1,34 +1,29 @@
 /* Welcome screen styles */
-
 .main {
-
 	&__welcomeScreen {
-        padding-top: 14vh;
-
-        @include respond-to($tablet-landscape) {
-            padding-top: 12vh;
-        }
-
-        @include respond-to($desktop) {
-            padding-top: 4vh;
-        }
-
-        @include respond-to($large-desktop) {
-            padding-top: 2vh;
-        }
+		padding-top: 14vh;
+		@include respond-to($tablet-landscape) {
+			padding-top: 12vh;
+		}
+		@include respond-to($desktop) {
+			padding-top: 4vh;
+		}
+		@include respond-to($large-desktop) {
+			padding-top: 2vh;
+		}
 
 		&--btn {
-            height: 54vw;
+			height: 54vw;
 			width: 54vw;
-            background-color: transparent;
+			background-color: transparent;
 			color: $neutralGrey;
 			border: 1px solid $glowBlue;
 			border-radius: 50%;
 			font-family: $mainFont;
 			font-size: 5vw;
 			font-weight: 300;
-            text-rendering: optimizeLegibility;
-            letter-spacing: 0.2em;
+			text-rendering: optimizeLegibility;
+			letter-spacing: 0.2em;
 			padding: 2vw;
 			animation: spin 10s infinite linear, glow 1.5s ease-in-out infinite alternate;
 			cursor: pointer;
@@ -39,42 +34,38 @@
 				height: 0.1vw;
 				background-color: $glowBlue;
 				display: block;
-				transition: width .3s;
+				transition: width 0.3s;
 			}
-
 			@include respond-to($tablet) {
 				height: 42vw;
 				width: 42vw;
 				font-size: 4vw;
-    		}
-
+			}
 			@include respond-to($tablet-landscape) {
 				height: 40vw;
 				width: 40vw;
-    		}
-
+			}
 			@include respond-to($desktop) {
 				height: 32vw;
 				width: 32vw;
 				font-size: 3vw;
-    		}
-
+			}
 			@include respond-to($large-desktop) {
 				height: 24vw;
 				width: 24vw;
 				font-size: 2vw;
-    		}
+			}
 
+			&:active,
+			&:focus,
+			&:hover,
 			&:link,
-            &:visited,
-            &:hover,
-            &:active,
-            &:focus {
-                color: $neutralGrey;
-                border: none;
+			&:visited {
+				color: $neutralGrey;
+				border: none;
 				animation: spin 10s infinite linear, glow 1.5s ease-in-out infinite alternate;
 				background-color: transparent !important;
-                outline: none !important;
+				outline: none !important;
 			}
 
 			&:hover {

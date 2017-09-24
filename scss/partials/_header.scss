@@ -1,12 +1,10 @@
 /* Header styles */
-
 .header {
     &__title {
         font-family: $mainFont;
         font-size: 12vw;
         color: $neutralGrey;
         font-weight: 100;
-
         @include respond-to($tablet) {
             font-size: 8vw;
         }
