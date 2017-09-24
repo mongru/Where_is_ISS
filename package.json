@@ -4,8 +4,8 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack --config  webpack.config.js --watch",
-    "hot": "webpack-dev-server --hot"
+    "build": "webpack --config  webpack.config.js --watch",
+    "start": "./node_modules/.bin/webpack-dev-server --output-public-path=/dist/"
   },
   "browserlist": [
     "> 1%",
