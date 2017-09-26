@@ -4,6 +4,8 @@ Single page app built with ReactJS v 15.4
 ## Demo
 [Click here](https://mongru.github.io/Where_is_ISS/)
 
+![Preview](/screenshots/mockup.jpg?raw=true)
+
 ## How the app works
 The app provides information about the current location of the International Space Station based on data from [wheretheiss.at REST API](https://wheretheiss.at/w/developer) and [Google Reverse Geocoding API](https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding) or [LocationIq Reverse Geocoding API](https://locationiq.org/).
 
