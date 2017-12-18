@@ -7,7 +7,7 @@
     "build": "webpack --config  webpack.config.js --watch",
     "start": "./node_modules/.bin/webpack-dev-server --output-public-path=/dist/"
   },
-  "browserlist": [
+  "browserslist": [
     "> 1%",
     "ie > 9"
   ],
@@ -26,7 +26,7 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.2",
+    "autoprefixer": "^7.2.3",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-add-module-exports": "^0.2.1",
@@ -34,7 +34,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-2": "^6.22.0",
-    "css-loader": "^0.28.4",
+    "css-loader": "^0.28.7",
     "file-loader": "^0.11.2",
     "gsap": "^1.20.2",
     "imports-loader": "^0.7.1",

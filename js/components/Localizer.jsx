@@ -19,13 +19,6 @@ export class Localizer extends React.Component {
         }
     }
 
-    // -------> function for checking if server res is ok
-    handleErrors = (res) => {
-        if(!res.ok) {
-            throw Error(res.statusText);
-        }
-        return res;
-    }
 
     // -------> function for checking current lat & lng of ISS
     getCurrPosition = () => {
@@ -35,7 +28,6 @@ export class Localizer extends React.Component {
         let locationBank = [];
 
         fetch(issUrl)
-            .then(this.handleErrors)
             .then(res => res.json()
             .then(res => {
                 // console.log(res);
@@ -95,7 +87,6 @@ export class Localizer extends React.Component {
                     // 10 000 free requests per day
 
                     fetch(backupGeoUrl)
-                        .then(this.handleErrors)
                         .then(res => res.json()
                         .then(res => {
                             console.log(res);
