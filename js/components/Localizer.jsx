@@ -72,7 +72,6 @@ export class Localizer extends React.Component {
         const geoUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.lat},${this.state.lng}&language=en&location_type=APPROXIMATE&key=AIzaSyCDxq86RWVhcaXwLkviwZb61OFFC1-2aBY`;
         // 2,500 free requests per day
         fetch(geoUrl)
-            .then(this.handleErrors)
             .then(res => res.json()
             .then(res => {
                 // console.log(res);
