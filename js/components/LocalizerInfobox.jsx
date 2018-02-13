@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 
 import FontAwesome from 'react-fontawesome';
 
-
 export const LocalizerInfobox = ({ message, name }) => {
     return (
         <div className="localizer__infobox">

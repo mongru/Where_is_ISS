@@ -19,10 +19,8 @@ export class Localizer extends React.Component {
         }
     }
 
-
     // -------> function for checking current lat & lng of ISS
-    getCurrPosition = () => {
-
+    getCurrPosition() {
         const issUrl = "https://api.wheretheiss.at/v1/satellites/25544";
         // res rate limit 1 per second
         let locationBank = [];
@@ -30,11 +28,6 @@ export class Localizer extends React.Component {
         fetch(issUrl)
             .then(res => res.json()
             .then(res => {
-                // console.log(res);
-                // console.log(res.timestamp)
-                // console.log(res.latitude.toFixed(6));
-                // console.log(res.longitude.toFixed(6));
-
                 const lat = res.latitude.toFixed(6);
                 const lng = res.longitude.toFixed(6);
                 const timestamp = res.timestamp;
@@ -68,15 +61,12 @@ export class Localizer extends React.Component {
 
 
     // -------> function for getting location name based on the current geo position
-    getLocationName = () => {
+    getLocationName() {
         const geoUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.lat},${this.state.lng}&language=en&location_type=APPROXIMATE&key=AIzaSyCDxq86RWVhcaXwLkviwZb61OFFC1-2aBY`;
         // 2,500 free requests per day
         fetch(geoUrl)
             .then(res => res.json()
             .then(res => {
-                // console.log(res);
-                // console.log(res.results);
-                // console.log(res.status);
                 const status = res.status;
                 //"ZERO_RESULTS" indicates that the reverse geocoding was successful but returned no results. This may occur if the geocoder was passed a latlng in a remote location.
 
@@ -137,7 +127,6 @@ export class Localizer extends React.Component {
     }
 
     componentDidMount() {
-
         this.getCurrPosition();
 
         // asynchronously update position after 60s without reloading the page
@@ -151,13 +140,10 @@ export class Localizer extends React.Component {
     // }
 
     render() {
-        // console.log(this.state.currentTime);
-        // console.log(this.state.location);
         const { loading, error, dataReady, currentTime, location } = this.state;
 
         // -------> loading message
         if(loading && !error) {
-            // console.log("loading");
             return (
                 <LocalizerInfobox name='spinner' message="Checking..." />
             )
@@ -165,8 +151,6 @@ export class Localizer extends React.Component {
 
         // -------> success message
         if(dataReady && !loading) {
-            // console.log(this.state.currentTime);
-            // console.log(this.state.location);
             return (
                 <LocalizerInfobox name='rocket' message={["At ", <span key={"time"}>{currentTime}</span>, " the International Space Station is located above  ", <span key={"location"}>{location}</span>]} />
                 );
@@ -174,8 +158,6 @@ export class Localizer extends React.Component {
 
         // -------> default message
         if(error && !dataReady) {
-            // console.log(this.state.currentTime);
-            // console.log("default message");
             return (
                 <LocalizerInfobox name='globe' message={["Oops! At ", <span key={"time"}>{currentTime}</span>, " the International Space Station is located above the ocean and we have no place names available! Please try again in a couple of minutes. If you'd like to see what the astronauts see right now ", <span key={"link"}><a href="http://iss.astroviewer.net/" target="_blank" title="astroviewer">click here</a></span>]} />
             );
