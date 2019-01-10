@@ -32,12 +32,12 @@ The app is fully responsive and was designed using the mobile first approach.
 ### Installing
 For local changes and edits clone or download this repo.
 ```
-'git clone https://github.com/mongru/Where_is_ISS.git'
+git clone https://github.com/mongru/Where_is_ISS.git
 ```
 
 Then:
 ```
-'cd Where_is_ISS'
+cd Where_is_ISS
 ```
 
 run
